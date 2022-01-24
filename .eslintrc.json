@@ -1,3 +1,14 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "prettier"],
+  "rules": {
+    "quotes": ["error", "double"],
+    "no-unused-vars": "error",
+    "spaced-comment": "off",
+    "comma-dangle": "off",
+    "arrow-body-style": "off",
+    "object-curly-newline": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-unescaped-entities": "off"
+  }
 }
