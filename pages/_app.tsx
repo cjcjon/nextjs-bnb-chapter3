@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <style jsx global>{`
         body {
           margin: 0;
+          font-family: Noto Sans, Noto Sans KR;
         }
       `}</style>
     </>
