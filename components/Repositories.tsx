@@ -2,7 +2,6 @@ import css from "styled-jsx/css"
 import { useRouter } from "next/router"
 import Link from "next/link"
 import formatDistance from "date-fns/formatDistance"
-import { userInfo } from "os"
 
 const style = css`
   a {
@@ -11,8 +10,6 @@ const style = css`
 
   .repos-wrapper {
     width: 100%;
-    height: 100vh;
-    overflow: scroll;
     padding: 0px 16px;
   }
 
