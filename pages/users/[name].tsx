@@ -132,17 +132,18 @@ export default function Name({ user, repos }: Props) {
 
 interface StaticPropsQuery extends ParsedUrlQuery {
   name: string
+  page?: string
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-  const { name } = context.query as StaticPropsQuery
+  const { name, page } = context.query as StaticPropsQuery
 
   try {
     const userRes = await fetch(`https://api.github.com/users/${name}`)
     const user = userRes.status === 200 ? await userRes.json() : undefined
 
     const repoRes = await fetch(
-      `https://api.github.com/users/${name}/repos?sort=updated&page=1&per_page=10`
+      `https://api.github.com/users/${name}/repos?sort=updated&page=${page ?? 1}&per_page=10`
     )
     const repos = repoRes.status === 200 ? await repoRes.json() : undefined
 
